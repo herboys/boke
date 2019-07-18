@@ -1,3 +1,4 @@
+
 .header{
   width: 100%;
   padding: 5px 0;
@@ -5,7 +6,8 @@
   background-color: #333;
   overflow: hidden;
   ul{
-    width: 90%;
+    width: 88%;
+    max-width: 1200px;
     margin: auto;
     color: white;
     line-height: 50px;
@@ -48,11 +50,10 @@
 @charset "utf-8";
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
 
+
 }
 @media screen and (max-width: 1023px) {
-  .page{
-    width: 95% !important;
-  }
+
   .header{
     ul{
       span{
@@ -66,11 +67,78 @@
   .user_wrap{
     display: none;
   }
+
+
+    .mians{
+      display: none;
+
+  }
 }
 @media only screen and (max-width: 1022px) {
+  .header{
+    ul{
+      span{
+        display: none;
+      }
+      li{
+        display: none;
+      }
+    }
+  }
+  .user_wrap{
+    display: none;
+  }
+  .list_wrap{
+
+    div:nth-child(1){
+      display: none;
+    }
+  }
+
 
 }
 @media only screen and (max-width: 480px) {
+  .header{
+    ul{
+      span{
+        display: none;
+      }
+      li{
+        display: none;
+      }
+    }
+  }
+  .user_wrap{
+    display: none;
+  }
+  .page {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: block !important;
+
+  }
+
+  .banner_maim{
+
+margin-left: 0px !important;
+    margin-top: 10px;
+
+  }
+  .banner_maim>ul{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner_maim>ul>li{
+    margin-bottom: 0px !important;
+  }
+  .banner_maim>ul>li:nth-child(1){
+    margin-right: 5px;
+  }  .banner_maim>ul>li:nth-child(2){
+    margin-left: 5px;
+  }
 
 }
 /* css */
