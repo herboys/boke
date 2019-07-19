@@ -11,7 +11,14 @@
         name: "home",
       components:{
          "v-header": headers
-      }
+      },
+      data(){
+        detailInfo: {}
+      },
+      mounted(){
+        console.log(111)
+
+      },
     }
 </script>
 

@@ -4,15 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Mint from 'mint-ui';
-Vue.use(Mint);
+import axios from 'axios';
+//定义全局变量
 import 'mint-ui/lib/style.css';
 import store from "./store/store";
 Vue.config.productionTip = false
-/* eslint-disable no-new */
+
+Vue.use(axios)
+    /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App/>'
 })

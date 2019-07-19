@@ -5,7 +5,7 @@
             :default-active="$route.path"
             unique-opened>
           <span>灰太狼个人博客</span>
-          <li v-for="item in list">
+          <li v-for="item in list" :key="item.Name" @click="going()">
             <router-link :to="{name:item.NamePath}" >
               {{item.Name}}
             </router-link>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { apiAddress } from '@/request/api';
     export default {
         name: "headers",
       data(){
@@ -60,7 +61,17 @@
           }
       },
       methods:{
+        going(){
+          console.log(1111111111111)
+            // 调用api接口，并且提供了两个参数
+            apiAddress({uids:100}).then(res => {
+                // 获取数据成功后的其他操作
 
+            })  .catch(err => {
+
+            })
+
+        }
       }
     }
 </script>
