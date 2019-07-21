@@ -13,7 +13,10 @@
          "v-header": headers
       },
       data(){
-        detailInfo: {}
+          return{
+            detailInfo: []
+          }
+
       },
       mounted(){
         console.log(111)

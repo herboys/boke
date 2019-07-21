@@ -64,7 +64,7 @@ import { apiAddress } from '@/request/api';
         going(){
           console.log(1111111111111)
             // 调用api接口，并且提供了两个参数
-            apiAddress({uids:100}).then(res => {
+            apiAddress({uid:100}).then(res => {
                 // 获取数据成功后的其他操作
 
             })  .catch(err => {

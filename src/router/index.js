@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import headers from '@/components/headers'
 import index from '@/home/index'
 import home from '@/components/home'
+// child
+import diary from '@/child/diary'
 Vue.use(Router)
 
 export default new Router({
@@ -20,9 +22,16 @@ export default new Router({
         name: 'home',
         component: home,
         children: [{
-            path: '/index',
+            path: '/',
             name: 'index',
-            component: index
+            component: index,
+          children: [
+            {
+              path:'/',
+              name:'diary',
+              component:diary
+            }
+          ]
         }, ]
     }, ]
 })

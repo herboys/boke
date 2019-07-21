@@ -9,7 +9,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     uid: '',
-    loginSuccess:''
+    loginSuccess:'',
+    token:'123'
+
   },
   getters,
   actions,

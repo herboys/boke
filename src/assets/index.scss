@@ -14,8 +14,11 @@
     span{
       font-size: 25px;
       margin-right: 30px;
+
     }
+
     li{
+
       width: 100px;
       text-align: center;
       display: inline-block;
@@ -67,8 +70,6 @@
   .user_wrap{
     display: none;
   }
-
-
     .mians{
       display: none;
 
@@ -140,14 +141,41 @@ margin-left: 0px !important;
     margin-left: 5px;
   }
 
-}
+  .list_wrap>.list_info>ul> li{
+    clear: both;
+    width: 87.6% !important;
+
+  }
+
+  .diary{
+    display: block !important;
+  }
+
+  .diary>.diary_banner>ul{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .diary>.diary_banner>ul>li{
+    width: 49%;
+  }
+  .diary>.diary_banner{
+    width: 100% !important;
+  }
+
+  .diary>.diary_room{
+    width: 100% !important;
+  }
+
+  }
 /* css */
 * { margin: 0; padding: 0 }
-body { font: 15px "Microsoft YaHei", Arial, Helvetica, sans-serif; color: #333; background: #E9EAED; line-height: 1.5; overflow-x: hidden; }
+body { font: 15px "Microsoft YaHei", Arial, Helvetica, sans-serif; color: #333; background: #f7f7f7; line-height: 1.5; overflow-x: hidden; }
 img { border: 0; display: block }
 ul, li { list-style: none; }
 a { text-decoration: none; color: #333; }
 a:hover { color: #000; text-decoration: none; }
+
 
 
 
