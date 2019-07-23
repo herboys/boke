@@ -6,6 +6,7 @@ import index from '@/home/index'
 import home from '@/components/home'
 // child
 import diary from '@/child/diary'
+import echarts from '@/child/echarts'
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +19,11 @@ export default new Router({
         name: 'headers',
         component: headers
     }, {
+        path: '/echarts',
+        name: 'echarts',
+        component: echarts
+    },
+      {
         path: '/home',
         name: 'home',
         component: home,

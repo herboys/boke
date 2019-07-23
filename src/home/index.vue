@@ -53,6 +53,7 @@
 
 </div>
       </div>
+<!--    个人推荐-->
     <div class="page list_wrap">
       <div class="list_info">
         <h2>个人特别推荐</h2>
@@ -69,12 +70,67 @@
           </li>
 
         </ul>
+        <div class="list_info">
+          <h2>个人特别推荐</h2>
+          <ol>
+            <li v-for="item in readerlist">
+              <i>
+                <a>
+                  <img :src="item.readerimg" />
+                </a>
+              </i>
+              <b>{{item.name}}</b>
+              <span>{{item.title}}</span>
+              <a class="reader-list-btn">文章阅读</a>
+            </li>
+
+          </ol>
+        </div>
       </div>
       <div class="mians">
-        <div>
+        <ol class="side">
           <h2>点击排行</h2>
+          <ol>
+            <li>
+              <a>
+                <img  src="../assets/4.jpg"/>
+                <span>sadadasdadasdadasdasdadadasddasdasdasdadasdasdasd</span>
+              </a>
+            </li>
+          </ol>
+          <ul>
+            <li v-for="item in readerlist " :key="item.name">
+              <a>
+                <img  :src="item.readerimg" />
 
-        </div>
+              </a>
+              <p>{{item.title}}</p>
+            </li>
+          </ul>
+        </ol>
+        <ol class="side">
+          <h2>点击排行</h2>
+          <ol>
+            <li>
+              <a>
+                <img  src="../assets/4.jpg"/>
+                <span>sadadasdadasdadasdasdadadasddasdasdasdadasdasdasd</span>
+              </a>
+            </li>
+          </ol>
+          <ul>
+            <li v-for="item in readerlist " :key="item.name">
+              <a>
+                <img  :src="item.readerimg" />
+
+              </a>
+              <p>{{item.title}}</p>
+            </li>
+          </ul>
+        </ol>
+        <ol class="side">
+          <h2>猜你喜欢</h2>
+        </ol>
       </div>
     </div>
     <div>
@@ -86,7 +142,6 @@
         <span></span>
       </div>
     </div>
-
     </div>
 </template>
 
@@ -312,11 +367,9 @@ height: 100%;
 
   ul{
     width: 100%;
-
     overflow: hidden;
-    padding: 10px 0 20px 10px;
+    padding: 10px 0px 20px 10px;
     position: relative;
-
     li{
       width: 27.6%;
       overflow: hidden;
@@ -396,7 +449,6 @@ float: left;
     height: 100%;
     left: 10px;
   }
-
 }
   .mians{
     border-radius: 5px;
@@ -437,6 +489,75 @@ float: left;
         li:hover{
           box-shadow: 0px 0px 2px 2px #66CCCC;
 
+        }
+      }
+    }
+    .side{
+      background-color: white;
+      padding: 20px;
+      border-bottom: 20px solid #f7f7f7;
+      ul{
+        li{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0px;
+          a{
+            flex: 2;
+            max-width: 70px;
+            min-width: 70px;
+            height: 70px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          p{
+            flex: 4;
+            padding-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-height: 24px;
+          }
+        }
+      }
+      ol{
+        li{
+          position: relative;
+          display: block;
+          margin: 20px 0;
+          background: #000;
+          position: relative;
+          overflow: hidden;
+          border-radius: 3px;
+          max-height: 110px;
+          a{
+            img{
+              width: 100%;
+              height: 100%;
+            }
+            span{
+              position: absolute;
+              top: 30%;
+              left: 0;
+              right: 0;
+              color: #FFF;
+              text-align: center;
+              font-size: 15px;
+              margin-top: 5px;
+              padding: 0 40px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              -webkit-box-orient: vertical;
+              /*display: -webkit-box;*/
+              -webkit-line-clamp: 2;
+              width: 100%;
+
+            }
+          }
         }
       }
     }
