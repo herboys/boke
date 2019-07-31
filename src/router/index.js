@@ -7,10 +7,17 @@ import home from '@/components/home'
 // child
 import diary from '@/child/diary'
 import echarts from '@/child/echarts'
+// dome
+import dome from "@/dome/dome"
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
+    routes: [
+        {
+        path: '/dome',
+        name: 'dome',
+        component: dome
+    },    {
         path: '/HelloWorld',
         name: 'HelloWorld',
         component: HelloWorld
