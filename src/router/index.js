@@ -9,11 +9,16 @@ import diary from '@/child/diary'
 import echarts from '@/child/echarts'
 // dome
 import dome from "@/dome/dome"
+//mock
+import SignIn from  "@/mock/SignIn"
 Vue.use(Router)
 
 export default new Router({
-    routes: [
-        {
+    routes: [{
+        path: '/',
+        name: 'SignIn',
+        component: SignIn
+    },{
         path: '/dome',
         name: 'dome',
         component: dome
@@ -22,7 +27,7 @@ export default new Router({
         name: 'HelloWorld',
         component: HelloWorld
     }, {
-        path: '/',
+        path: '/headers',
         name: 'headers',
         component: headers
     }, {
