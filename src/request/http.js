@@ -18,7 +18,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 axios.interceptors.response.use(
         response => {
           // console.log(response)
-            if (response.status === 200) {
+            if (response.status) {
                 return Promise.resolve(response);
             } else {
                 return Promise.reject(response);
