@@ -7,7 +7,7 @@
             <div class="search">
                 <div>
                     <input placeholder="输入点什么..." >
-                    <button>搜一搜</button>
+                    <button @click="GoodsListBtn">搜一搜</button>
                 </div>
             </div>
         </div>
@@ -35,8 +35,19 @@
 </template>
 
 <script>
+    import {GoodsList} from '@/request/api'
     export default {
-        name: "dome"
+        name: "dome",
+        methods:{
+            GoodsListBtn(){
+                let para={
+                    page:2
+                }
+                GoodsList(para).then(res=>{
+
+                })
+            }
+        }
     }
 </script>
 
@@ -59,7 +70,6 @@
         height: 90px;
         text-align: center;
         line-height: 90px;
-
     }
 .search>div>input{
     height: 30px;
