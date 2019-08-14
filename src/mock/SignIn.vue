@@ -5,9 +5,8 @@
                 <li><p>繁华落尽</p></li>
                 <li><label>账号</label><input v-model="AccountNumber"></li>
                 <li><label>密码</label><input type="password" v-model="Password"></li>
-
                 <li><button ref="from" @click="AdminSignInBtn">Sign in</button></li>
-                <li><span>忘记密码</span> <span>马上注册</span></li>
+                <li><span>忘记密码</span> <span @click="avatarbtn">马上注册</span></li>
                 <div>{{Result}}</div>
             </ul>
         </div>
@@ -15,7 +14,7 @@
 </template>
 
 <script>
-    import {AdminSignIn,BolgLogin} from "@/request/api"
+    import {AdminSignIn,BolgLogin,uploadavatar} from "@/request/api"
     export default {
         name: "SignIn",
         data(){
@@ -23,6 +22,7 @@
                 AccountNumber:'',
                 Password:'',
                 Result:'',
+                avatar:'',
                 list:[{
                     name:111
                 },{
@@ -31,10 +31,32 @@
             }
         },
         methods:{
+            avatarbtn(){
+                async function aa(){
+                    let first = await function bb() {
+                        return new Promise((resolve,reject)=>{
+                            let mun=14
+                            if(mun===1){
+                                setTimeout(()=>{
+                                    resolve('2222')
+                                },2000)
+                            }else {
+                                reject('执行失败了')
+                            }
+                        })
+                    }()
+                    return first
+                }
+                aa().then(res=>{
+                    console.log(res)
+                }).catch(err=>{
+                    console.log(err)
+                })
+                console.log('我先执行了')
+            },
             // 登陆
             AdminSignInBtn(){
                 this.$refs.from.style.backgroundColor = "#f5f5f5";
-                console.log(this.$refs)
                 let para={
                     username:this.AccountNumber,
                     userpassword:this.Password
@@ -43,7 +65,7 @@
                     this.Result=res.msg
                     switch (this.Result) {
                         case "登录成功":
-                            this.$router.push({path:"/dome"})
+                            this.$router.push({path:"/updataimg"})
                             break
                     }
                 }).catch(err=>{

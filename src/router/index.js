@@ -9,19 +9,71 @@ import diary from '@/child/diary'
 import echarts from '@/child/echarts'
 // dome
 import dome from "@/dome/dome"
+import updataimg from "@/dome/updataimg"
 //mock
 import SignIn from  "@/mock/SignIn"
+// APP 项目
+import appindex from  "@/app/appindex"
+import apphome from  "@/app/apphome"
+import appbottom from  "@/app/app_bottom/appbottom"
+import appnews from  "@/app/app_bottom/appnews"
+import appContacts from  "@/app/app_bottom/appContacts"
+import appSpot from  "@/app/app_bottom/appSpot"
+import appdynamic from  "@/app/app_bottom/appdynamic"
 Vue.use(Router)
-
 export default new Router({
-    routes: [{
+    routes: [
+        // app 项目
+        {
         path: '/',
+        name: 'appindex',
+        component: appindex
+    },{
+        path: '/apphome',
+        name: 'apphome',
+        component: apphome,
+            children:[
+                {
+                    path: '/',
+                    name: 'appnews',
+                    component: appnews
+            },{
+                    path: '/app_bottom/appnews',
+                    name: 'appnews',
+                    component: appnews
+            },{
+                    path: '/app_bottom/appContacts',
+                    name: 'appContacts',
+                    component: appContacts
+            },{
+                    path: '/app_bottom/appSpot',
+                    name: 'appSpot',
+                    component: appSpot
+            },{
+                    path: '/app_bottom/appdynamic',
+                    name: 'appdynamic',
+                    component: appdynamic
+            },
+            ]
+    },{
+        path: '/app_bottom/appbottom',
+        name: 'appbottom',
+        component: appbottom
+    },
+
+
+        {
+        path: '/SignIn',
         name: 'SignIn',
         component: SignIn
     },{
         path: '/dome',
         name: 'dome',
         component: dome
+    }, {
+        path: '/updataimg',
+        name: 'updataimg',
+        component: updataimg
     },    {
         path: '/HelloWorld',
         name: 'HelloWorld',
@@ -53,3 +105,4 @@ export default new Router({
         }, ]
     }, ]
 })
+
