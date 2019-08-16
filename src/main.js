@@ -8,8 +8,10 @@ import axios from 'axios';
 //定义全局变量
 import 'mint-ui/lib/style.css';
 import store from "./store/store";
-Vue.config.productionTip = false
+import directives from './directives'
 
+Vue.config.productionTip = false
+directives.init(Vue);
 Vue.use(axios)
     /* eslint-disable no-new */
 new Vue({

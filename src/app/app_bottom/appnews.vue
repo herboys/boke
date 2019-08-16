@@ -1,5 +1,5 @@
 <template>
-    <div class="pages">
+    <div class="pages" data-touchmove-con>
         <div class="headers">
             <ul>
                 <li>
@@ -20,12 +20,47 @@
         <div class="title">
             <div><span>搜索</span></div>
         </div>
+        <div class="shopping_page" >
+            <div>
+                <ul>
+                    <li v-for="(item,index) in itemlist" ref="touchmove" v-leftMove="{container: '[data-touchmove-con]'}">
+                        <div class="item_box bd_bottom">
+                            <span>型号：</span>
+                            <span>{{item.productionNmae}}</span>
+                        </div>
+                        <div class="delete_item" @click="deleteItem(index)">addShort</div>
+                    </li>
+                    <button @click="addShort">addShort</button>
+                </ul>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "appnews"
+        name: "appnews",
+        data(){
+            return{
+                itemlist:[
+                    {
+                        productionNmae: 'iPhone X'
+                    }
+                ]
+            }
+        },
+         methods:{
+        //     添加一条数据
+             addShort () {
+                 var addObj = {productionNmae: '商品' + this.itemlist.length}
+                 this.itemlist.push(addObj)
+             },
+             // 删除一条数据‘
+             deleteItem(ind){
+                 console.log(this.$refs['touchmove'][ind])
+                 this.itemlist.splice(ind, 1)
+             }
+         }
     }
 </script>
 
@@ -88,5 +123,37 @@
             }
         }
     }
+    .shopping_page{
+        overflow: hidden;
+        background: #f5f5f5;
+        div{
+            margin-bottom: 10px;
+            background: white;
+            .item_box {
+                display: flex;
+                margin: 0 15px;
+                justify-content: space-between;
+                line-height: 50px;
+            }
+            .delete_item {
+                position: absolute;
+                top: 0;
+                right: -60px;
+                width: 60px;
+                height: 100%;
+                line-height: 100px;
+                font-family: PingFangSC-Regular;
+                font-size: 16px;
+                text-align: center;
+                color: white;
+                background: #FF7EA9;
+            }
+            .bd_bottom {
+                border-bottom: .5px solid #e8e8e8;
+            }
+        }
+
+    }
+
 
 </style>

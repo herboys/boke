@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="checkbox" id="fatherid" onclick="check(this)" />
+    <div id="childlistid">
+        <input type="checkbox"  onclick="checks(this)"/>
+        <input type="checkbox" onclick="checks(this)" />
+        <input type="checkbox"  onclick="checks(this)" />
+    </div>
+
+</form>
+<script>
+    var  father=document.getElementById('fatherid')
+    var chillist=document.getElementById('childlistid')
+    var inputs = chillist.getElementsByTagName("INPUT");
+    function check(e) {
+        if(e.checked===true){
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].checked=true
+            }
+        }else {
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].checked=false
+            }
+        }
+    }
+    function checks(e) {
+        for (let i = 0; i <inputs.length; i++) {
+            if(inputs[i].checked===false){
+                father.checked=false
+            }
+        }
+    }
+</script>
+</body>
+</html>

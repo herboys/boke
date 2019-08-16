@@ -20,9 +20,29 @@ import appnews from  "@/app/app_bottom/appnews"
 import appContacts from  "@/app/app_bottom/appContacts"
 import appSpot from  "@/app/app_bottom/appSpot"
 import appdynamic from  "@/app/app_bottom/appdynamic"
+
+
+// help
+import helpmain from  "@/help/helpmain"
+
+
 Vue.use(Router)
 export default new Router({
+    mode: 'history',
+    srcollBehavior(to,from,savedPosition){
+        if(to.hash){
+            return {
+                selector:to.hash
+            }
+        }
+    },
     routes: [
+        // help
+        {
+            path: '/helpmain',
+            name: 'helpmain',
+            component: helpmain
+        },
         // app 项目
         {
         path: '/',
