@@ -24,7 +24,7 @@
             <div>
                 <ul>
                     <li v-for="(item,index) in itemlist" ref="touchmove" v-leftMove="{container: '[data-touchmove-con]'}">
-                        <div class="item_box bd_bottom">
+                        <div class="item_box bd_bottom" @click="ChildListBtn(item)">
                             <span>型号：</span>
                             <span>{{item.productionNmae}}</span>
                         </div>
@@ -55,10 +55,14 @@
                  var addObj = {productionNmae: '商品' + this.itemlist.length}
                  this.itemlist.push(addObj)
              },
-             // 删除一条数据‘
+             // 删除一条数据
              deleteItem(ind){
                  console.log(this.$refs['touchmove'][ind])
                  this.itemlist.splice(ind, 1)
+             },
+             // 点击获取当前
+             ChildListBtn(item){
+                 console.log(item)
              }
          }
     }
